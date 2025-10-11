@@ -28,7 +28,7 @@ void insertatend(Node *& head , int value)
     temp->next=newNode;
     tail=newNode;
 }
-void deleteatend(Node *head)
+void deleteatend(Node *& head)
 {Node*tail = NULL;
     if(head==NULL)
     {
