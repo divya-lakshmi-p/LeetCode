@@ -19,7 +19,7 @@ int main()
     //k=k%n;
     for(int i=0; i<n; i++)
     {
-       int position = (i-k+n)%n;
+       int position = (i+k)%n;
        res[position] = v[i];
     }
     for(auto val:res)
