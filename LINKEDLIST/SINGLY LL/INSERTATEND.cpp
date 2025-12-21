@@ -51,3 +51,56 @@ int main()
     }
     printlist(head);
 }
+
+
+//second variant
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node * next;
+    Node (int value)
+    {
+        data=value;
+        next=NULL;
+    }
+};
+void insertatend(Node *& head, Node *& tail , int value)
+{
+    Node * newone = new Node(value);
+
+    if(head==NULL)
+    {
+        head=tail=newone;
+        return;
+    }
+    tail->next=newone;
+    tail=newone;
+}
+void printlinkedlist(Node *& head)
+{
+    Node * tmp = head;
+    while(tmp!=NULL)
+    {
+        cout<<tmp->data <<"->";
+        tmp=tmp->next;
+    }
+    cout<<"NULL";
+
+    cout<<endl;
+}
+
+int main()
+{
+    Node * head = NULL;
+    Node * tail = NULL;
+
+    
+    for(int i=1; i<100; i++)
+    {
+          int value=i;
+        insertatend(head, tail,value);
+    }
+    printlinkedlist(head);
+}
