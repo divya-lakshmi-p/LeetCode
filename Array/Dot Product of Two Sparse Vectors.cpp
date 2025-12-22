@@ -77,3 +77,83 @@ public:
 // SparseVector v1(nums1);
 // SparseVector v2(nums2);
 // int ans = v1.dotProduct(v2);
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n),m(n);
+    for(int i=0; i<n; i++)
+    {
+        cin>>v[i];
+    }
+    for(int j=0;j<n;j++)
+    {
+        cin>>m[j];
+    }
+
+    vector<pair<int, int>>val;
+    vector<pair<int, int>>kal;
+
+    for(int i=0; i<n; i++)
+    {
+        if(v[i]!=0)
+        {
+            val.push_back({i,v[i]});
+        }
+    
+    }
+
+    for(int j=0; j<n; j++)
+    {
+        if(m[j]!=0)
+        {
+            kal.push_back({j,m[j]});
+        }
+    }
+
+   for(auto o:val)
+    {
+        cout<<o.first << "   "<<o.second;
+        cout<<endl;
+    }
+
+    cout<<endl;
+    for(auto p:kal)
+    {
+        cout<<p.first<<"    "<<p.second;
+        cout<<endl;
+    }
+
+    int i=0,j=0;
+    int sum =0;
+     while(i <val.size() && j<kal.size())
+     {
+
+            if(val[i].first==kal[j].first)
+            {
+                sum += val[i].second*kal[j].second;
+                i++;
+                j++;
+            }
+            else if(val[i].first<kal[j].first)
+            {
+                i++;
+            }
+            else
+            {
+                j++;
+            }
+        }
+
+cout<<sum;
+    cout<<endl;
+}
