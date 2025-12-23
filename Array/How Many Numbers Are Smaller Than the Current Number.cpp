@@ -66,3 +66,43 @@ public:
         return ans;
     }
 };
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int>v(n);
+
+    for(int i=0; i<n; i++)
+    {
+        cin>>v[i];
+    }
+
+    vector<int>one = v;
+    sort(one.begin(), one.end());
+    unordered_map<int,int>mp;
+    for(int i=0; i<one.size(); i++)
+    {
+        if(!mp.count(one[i]))
+            mp[one[i]]=i;
+    }
+
+    vector<int>ret;
+    for(auto each:v)
+    {
+        ret.push_back(mp[each]);
+    }
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<ret[i]<<" ";
+    }
+
+    cout<<endl;
+}
