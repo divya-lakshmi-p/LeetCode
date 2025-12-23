@@ -1,4 +1,4 @@
-Right Rotation
+left Rotation
 
 
 #include<bits/stdc++.h>
