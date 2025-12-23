@@ -1,4 +1,4 @@
-Left rotation of array
+Right rotation of array
 
 #include<bits/stdc++.h>
 using namespace std;
