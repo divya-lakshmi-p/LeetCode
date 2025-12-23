@@ -117,3 +117,57 @@ public:
     return mp;
     }
 };
+
+
+
+//Input: groupSizes = [3,3,3,3,3,1,3]
+//Output: [[5],[0,1,2],[3,4,6]]
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+    unordered_map<int , vector<int>>mp;
+    for(int i=0; i<n;i++)
+    {
+        mp[v[i]].push_back(i);
+    }
+    vector<vector<int>>final;
+    for(auto val:mp)
+    {
+        int size = val.first;
+        vector<int> &people = val.second;
+
+        for(int i=0; i<people.size(); i+=size)
+        {    // 3 ->0 1 2 3 4 6 
+            vector<int>group;
+            for(int j=0;j<size;j++)
+            {
+                group.push_back(people[i+j]);
+
+            }
+
+            final.push_back(group);
+        }   
+    }
+
+     for(auto &grp : final)
+    {
+        cout << "[";
+        for(int i = 0; i < grp.size(); i++)
+        {
+            cout << grp[i];
+            if(i + 1 < grp.size()) cout << ",";
+        }
+        cout << "] ";
+    }
+}
