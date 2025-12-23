@@ -42,3 +42,45 @@ public:
         
     }
 };
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace  std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0; i<n; i++)
+    {
+        cin>>v[i];
+    }
+
+    vector<int>first(n),second(n);
+
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {       
+        first[i]=sum;
+        sum+=v[i];
+       
+    }
+    sum=0;
+    for(int i=n-1; i>=0; i--)
+    {
+        second[i]=sum;
+        sum+=v[i];
+    }
+    for(int i=0;i<n;i++ )
+    {
+        v[i]=abs(first[i]-second[i]);
+        cout<<v[i]<<" ";
+    }
+    
+    cout<<endl;
+
+}
