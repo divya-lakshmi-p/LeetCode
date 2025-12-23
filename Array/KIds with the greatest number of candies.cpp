@@ -45,3 +45,41 @@ public:
         
     }
 };
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace  std;
+
+int main()
+{
+    int n,extra;
+    cin>>n>>extra;
+    vector<int>v(n);
+    for(int i=0; i<n; i++)
+    {
+        cin>>v[i];
+    }
+    int res =  *max_element(v.begin() ,  v.end());
+
+    
+
+    vector<bool>ans;
+
+    for(int i=0; i<n; i++)
+    {
+        ans.push_back( v[i]+extra >= res);
+    }
+
+    cout<<boolalpha;
+    for(auto val:ans)
+    {
+        cout<<val<<" ";
+    }
+    cout<<endl;
+
+}
