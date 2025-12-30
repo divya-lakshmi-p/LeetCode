@@ -51,3 +51,63 @@ int main()
     for(int j=0; j<index; j++)
         cout << v[j] << " ";
 }
+
+
+
+
+
+
+
+
+another way 
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        /*it wont give result in ordered wise 
+        unordered_map<int , int>mp;
+        for(int i=0; i<nums.size(); i++)
+        {
+            mp[nums[i]]++;
+        }
+
+          int index =0;
+         for(auto  val:mp)
+         {
+            nums[index]=val.first;
+            index++;
+
+         }
+
+         return index;*/
+/*
+         set<int>s;
+         for(auto x:nums)
+         {
+            s.insert(x);
+         }
+
+         int index =0;
+         for(auto val:s)
+         {
+            nums[index]=val;
+            index++;
+         }
+
+         return index;*/
+        int index =0;
+        for(int i=0; i<nums.size()-1; i++)
+        {
+            if(nums[i] !=nums[i+1])
+            {
+                nums[index]=nums[i];
+                index++;
+            }
+        }
+
+        nums[index] = nums.back();
+        index++;
+        return index;
+
+
+    }
+};
