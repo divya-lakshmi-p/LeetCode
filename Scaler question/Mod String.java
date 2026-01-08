@@ -63,6 +63,24 @@ int Solution::findMod(string A, int B) {
 
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    int a;
+    cin>>s>>a;
+int sum=0;
+for(int i=0;i<s.length(); i++)
+{
+    int res = s[i]-'0';
+    sum = (sum * 10 +res)%a;
+}
+cout<<sum;
+}
+
+
 Java 
 public class Solution {
     public int findMod(String A, int B) {
