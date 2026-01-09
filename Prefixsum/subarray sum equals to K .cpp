@@ -20,6 +20,46 @@ Constraints:
 -1000 <= nums[i] <= 1000
 -107 <= k <= 107
 
+
+
+ Brute force approach 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    vector<int>v;
+    for(int i=0; i<n; i++)
+    {
+        int x;
+        cin>>x;
+        v.push_back(x);
+    }
+   
+     int sum=0,count=0,l=0;
+      for(int i=0; i<n; i++)
+     {
+       sum=0;
+      for(int j=i; j<n; j++)
+      {
+         ((sum+=v[j])==k)?count++:l++;
+         // cout<<sum <<" ";
+       //  if(sum==k)
+          //count++;
+      }
+     }
+
+     cout<<count<<" ";
+     cout<<endl;
+     
+}
+
+
+
+optimised approach
+
 #include<bits/stdc++.h>
 using namespace std;
 
