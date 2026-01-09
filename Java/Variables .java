@@ -58,3 +58,63 @@ class HelloWorld
 
     }
 }
+
+
+
+class HelloWorld
+{
+    /*static void greet(){
+        System.out.println("Hi Divya , Dont worry , these all are not your mistake , you are born to achieve so focus on that ");
+    }
+    public static void main (String args[])
+    {
+        greet();
+    }*/
+
+        /*static void greet(String name ){
+            System.out.println("Hello "+name);
+        }
+  public static void main(String args[])
+  {
+    greet("Divya");
+  }*/
+ /*  static int add(int a , int b)
+  {
+    return a+b;
+  }
+
+    public static void main(String args[])
+    {
+        int sum = add(10,20);
+        System.out.println(sum);
+    }*/
+/* 
+ static int mul(int x)
+ {
+    return x*x;
+ }
+
+  public static void main(String args[])
+  {
+    int square = mul(5);
+    System.out.println(square);
+  }*/
+
+
+  static String check(int a)
+  {
+    if( a%2==0)
+        return "Even";
+    else
+        return "odd";
+  }
+
+  public static void main(String args[])
+  {
+    String sum  = check(20);
+    System.out.println(sum);
+
+
+  }
+
+}
