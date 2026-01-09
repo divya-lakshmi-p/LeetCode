@@ -112,3 +112,15 @@ int sum=0,s=0,e=0;
     cout<<sum<<" ";
 cout<<endl;
 }
+
+
+
+How many subarrays include v[i]?
+
+Start index choices: 0 to i ⟶ total i + 1 choices
+
+End index choices: i to n - 1 ⟶ total n - i choices
+
+Total subarrays that include v[i]:
+
+(i + 1) * (n - i)
