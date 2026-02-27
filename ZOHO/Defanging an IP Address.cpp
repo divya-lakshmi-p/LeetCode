@@ -15,7 +15,7 @@ Output: "255[.]100[.]50[.]0"
 
 
 
-
+C++
 
 class Solution {
 public:
@@ -29,3 +29,26 @@ public:
         return ans;
     }
 };
+
+
+
+
+java 
+
+
+
+class Solution {
+    public String defangIPaddr(String address) {
+        //return address.replace("." , "[.]");
+
+        StringBuilder ans = new StringBuilder();
+
+        for(char ch :address.toCharArray())
+        {
+            ans.append((ch=='.')? "[.]":ch);
+        }
+
+
+        return ans.toString();
+    }
+}
