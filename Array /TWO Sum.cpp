@@ -43,3 +43,46 @@ return {};
         
     }
 };
+
+
+
+
+
+
+using Two pointer technique 
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+  int n , target;
+  cin>>n>>target;
+  vector<int>v(n);
+  for(int i=0; i<n; i++)
+  {
+    cin>>v[i];
+
+  }
+
+  int left =0 ,right = v.size()-1;
+
+  while(left < right)
+  {
+    int sum = v[left]+v[right];
+
+    if(sum == target)
+    {
+      cout<< v[left]<<" "<<v[right];
+      break;
+  }
+    else if(sum  <target)
+        left++;
+    else
+        right--;
+
+  }
+}
