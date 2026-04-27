@@ -58,28 +58,8 @@ class main
             
         }
     }
-} tempe = tempe%n;
-                reversearray(arr , 0 , n-1);
-                reversearray(arr , 0 , tempe-1);
-                reversearray(arr , tempe , n-1);
-     }
-
-     static void reversearray( int [] arr, int left , int right)
-    {      // int left = 0 , right = arr.length-1;
-
-        while(left<right)
-        {
-            int  change = arr[left];
-            arr[left]=arr[right];
-            arr[right]=change;
-
-            left++;
-            right--;
-
-
-            
-        }
-    }
+} 
+                
 
 
         
@@ -87,7 +67,7 @@ class main
 
 
     
-}
+
 
 
 
