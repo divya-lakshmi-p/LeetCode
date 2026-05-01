@@ -108,3 +108,31 @@ INSERT INTO students values(9 ,'Ap' , 98,96,'NA');
 
 
 select * from students;
+
+
+
+✅ Exercise 4
+
+Create table employees
+
+Columns:
+
+id → auto increment primary key
+name → required
+salary → must be > 1000
+department → required
+
+
+
+
+CREATE TABLE Employees (ID INT  Auto_Increment Primary key  , NAME VARCHAR(100) NOT NULL , Salary INT check(Salary >1000) , DEPARTMENT VARCHAR(100)NOT NULL);
+
+
+Insert INTO Employees  values (1, 'DIVYA' ,10000,'CSE');
+
+select * from Employees;
+
+
+
+
+
