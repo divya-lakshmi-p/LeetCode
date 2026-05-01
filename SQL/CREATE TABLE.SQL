@@ -156,4 +156,18 @@ Insert into products values(1, 'DIVYA' , 278.98,'0');
 select * from products;
 
 
+✅ Exercise 7
+
+Create table accounts
+
+Columns:
+
+id → auto increment primary key
+username → unique + required
+password → required
+balance → default 0 and ≥ 0
+
+Create table accounts(id INT auto_increment primary key  , username varchar(100) UNIQUE NOT NULL , password varchar(100) NOT NULL , balance int default '0' check(balance >=0));
+
+
 
