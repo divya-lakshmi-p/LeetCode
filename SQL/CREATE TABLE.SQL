@@ -133,6 +133,27 @@ Insert INTO Employees  values (1, 'DIVYA' ,10000,'CSE');
 select * from Employees;
 
 
+✅ Exercise 6
+
+Create table products
+
+Columns:
+
+id → auto increment primary key
+name → required
+price → must be > 0
+stock → default 0
+🔴 BONUS (Slightly Advanced)
+
+
+
+
+Create table products (ID int Auto_increment Primary key , Name Varchar(100)NOT NULL , Price Decimal(10 ,2) check (price >0) ,stock Int default'0');
+
+
+Insert into products values(1, 'DIVYA' , 278.98,'0');
+
+select * from products;
 
 
 
