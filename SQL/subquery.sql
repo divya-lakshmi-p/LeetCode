@@ -104,3 +104,16 @@ select student , marks from students order by marks DESC LIMIT 1 OFFSET 1;
 
 19.Find students whose marks are greater than minimum marks of their city
 select students , from students where marks >(select min(marks) from students group by city);
+
+
+
+Find students whose marks are above average in their city
+
+
+SELECT name
+FROM students s
+WHERE marks >= (
+  SELECT AVG(marks)
+  FROM students
+  WHERE city = s.city
+);
