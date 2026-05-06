@@ -206,4 +206,220 @@ limit 1;
 
 
 
+INNER JOIN
+
+1.Show customer name and order amount
+
+select c.name , o.amount
+from customers c
+inner join orders o
+on c.id = o.customer_id;
+
+2.Show customers who placed orders above 500
+
+select c.name , sum(o.amount)
+from customers c
+inner join orders o
+on c.id = o.customer_id
+group by c.name
+Having sum(o.amount)>500
+
+3.Show total amount spent by each customer
+select c.name , sum(o.amount)
+from customers c
+inner join orders o
+on c.id = o.customer_id
+group by c.name;
+
+4.Show customer who spent highest total amount
+select c.name ,  sum(o.amount)
+from customers c
+inner join orders o
+on c.id = o.customer_id
+group by c.name
+order by sum(o.amount) DESC
+LIMIT 1;
+
+can we use here max instead of sum  
+
+
+LEFT JOIN
+
+1.Show all customers and their order amounts
+  
+select c.name , o.amount
+from customers c
+left join orders o
+on c.id = o.customer_id;
+
+2.Show customers with no orders
+select c.name 
+from customers c
+left join orders o
+on c.id = o.customer_id 
+where o.customer_id is NULL;
+
+3.Count orders per customer
+(including customers with 0 orders)
+
+select c.name ,count(o.customer_id)
+from customers c
+left join orders o
+on c.id = o.customer_id
+group by c.name;
+
+
+4.Show total amount spent per customer
+(including customers with 0)
+
+select c.name , IFNULL(sum(o.amount),0)
+from customers c
+left join orders o
+on c.id = o.customer_id
+group by c.name;
+
+
+Right join 
+
+1.Show all orders with customer names
+
+select c.name , o.customer_id
+from customers c
+right join orders o
+on c.id = o.customer_id;
+
+2.Show orders without customers
+
+
+select c.name , o.customer_id
+from customers c
+right join orders o
+on c.id = o.customer_id
+where c.id is NULL;
+
+3.Count unmatched orders
+
+
+select count(o.id)
+from customers c
+right join orders o
+on c.id = o.customer_id
+where c.id is null;
+
+
+4.Find highest unmatched order amount
+select MAX(o.amount) 
+from customers c
+right join orders o
+on c.id = o.customer_id
+where c.id is NULL;
+
+
+MULTIPLE JOINS
+
+1.Show customer name and product name
+
+select  c.name , p.product_name
+from customers c
+inner join orders o
+on c.id = o.customer_id
+inner join products p
+on o.product_id = p.id;
+
+2.Show customer name and product price
+
+select c.name , p.price
+from customers c
+inner join orders o
+on c.id = o.customer_id
+inner join products p
+on p.id = o.product_id;;
+
+3.Show total money spent by each customer
+
+select c.name , sum(p.price)
+from customers c
+inner join orders o
+on c.id = o.customer_id
+inner join products p
+on p.id = orders.product_id
+group by c.name;
+
+4.Show customer who spent highest total amount
+
+select c.name , sum(p.price)
+from customers c
+inner join orders o
+on c.id = o.customer_id
+inner join products p
+on p.id = orders.product_id
+group by c.name
+order by sum(p.price) DESC
+LIMIT 1;
+
+5.Show most expensive product purchased
+
+select product_name
+from products where price = (select max(price) from products);
+
+to check whether it is purchased 
+
+SELECT p.product_name
+FROM orders o
+INNER JOIN products p
+ON o.product_id = p.id
+ORDER BY p.price DESC
+LIMIT 1;
+
+
+
+FUll outer JOIN
+
+1.Show all customers and all orders
+
+select  c.name ,o.amount
+from customers c
+left join orders o
+on c.id = o.customer_id
+union
+select c.name , o.amount
+from customers c
+right join orders o
+on c.id = o.customer_id;
+
+
+2.Show unmatched customers and unmatched orders together
+
+select c.name 
+from customers c
+left join orders o
+on c.id = o.customer_id
+where o.customer_id is NULL
+union
+select o.customer_id
+from customers c
+right join orders o
+on c.id = o.customer_id
+where c.id is NULL;
+
+3.Count all rows from FULL OUTER JOIN result
+
+SELECT COUNT(*)
+FROM (
+    SELECT c.name, o.amount
+    FROM customers c
+    LEFT JOIN orders o
+    ON c.id = o.customer_id
+
+    UNION
+
+    SELECT c.name, o.amount
+    FROM customers c
+    RIGHT JOIN orders o
+    ON c.id = o.customer_id
+) AS full_data;
+
+
+
+
 
