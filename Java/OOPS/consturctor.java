@@ -179,26 +179,29 @@ public class Main{
 
 5.COnstructor Overloading
 
-    import javax.swing.text.StyledDocument;
+
 
 class Student
 {
     int id;
     String name;
+
+    Student()
+    {
+        id = 1;
+        name = "Divya";
+    }
     
-    Student(int i , String  n)
+    Student(int i)
     {
         id = i;
+    }
+    Student(int i,String n) 
+    {
+        id= i;
         name = n;
     }
-
-    Student(Student s)///copy constructor 
-    {
-        id= s.id;
-        name = s.name;
-    }
    
-
     void display()
     {
         System.out.println(id +" "+name);
@@ -208,16 +211,13 @@ public class Main{
 
     public static void main(String args[])
     {
-        Student s1 = new Student(1 , "DIVYALAKSHMI");
-        Student s2 = new Student(s1);
-
-        s2.name = "lakshmi";
-  
-
-       // s1.setData(100,"Divyalakshmi");
+        Student s1 = new Student();
+        Student s2 = new Student(1);
+        Student s3 = new Student(3,"Srithika");
 
         s1.display();
         s2.display();
+        s3.display();
     }
 }
     
