@@ -12,7 +12,7 @@ select * from students where place = 'BANGALORE ' order by marks DESC;
 5.Get students with marks between 70 and 90
 select * from students where marks >70 and marks <90 ;
 6.Get students NOT from Bangalore
-select * from students where place != 'Bangalore';'
+select * from students where place != 'Bangalore';
 
 LIMIT
 
