@@ -78,8 +78,39 @@ public class main
 
 2.MULTIPLE INHERITANCE 
 
+In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes.
+
+Note: that Java does not support multiple inheritances with classes. In Java, we can achieve multiple inheritances only through Interfaces. 
 
 
+
+  interface LandVehicle {
+    default void landInfo() {
+        System.out.println("This is a LandVehicle");
+    }
+}
+interface WaterVehicle {
+    default void waterInfo() {
+        System.out.println("This is a WaterVehicle");
+    }
+}
+// Subclass implementing both interfaces
+class AmphibiousVehicle implements LandVehicle, WaterVehicle {
+    AmphibiousVehicle() {
+        System.out.println("This is an AmphibiousVehicle");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        AmphibiousVehicle obj = new AmphibiousVehicle();
+        obj.waterInfo();
+        obj.landInfo();
+    }
+}
+
+
+
+main code  
 
   interface UPSC
 {
@@ -145,7 +176,30 @@ class main{
 
 3.Multilevel  Inheritance 
 
+In Multilevel Inheritance, a derived class will be inheriting a base class and as well as the derived class also acts as the base class for other classes.
 
+
+
+  class Vehicle {
+    Vehicle() {
+        System.out.println("This is a Vehicle");
+    }
+}
+class FourWheeler extends Vehicle {
+    FourWheeler() {
+        System.out.println("4 Wheeler Vehicles");
+    }
+}
+class Car extends FourWheeler {
+    Car() {
+        System.out.println("This 4 Wheeler Vehicle is a Car");
+    }
+}
+public class Geeks {
+    public static void main(String[] args) {
+        Car obj = new Car(); // Triggers all constructors in order
+    }
+}
 
   class vehicle
 {
@@ -197,3 +251,86 @@ public class main{
     }
 }
 
+4.Hierarichal Inheritance 
+In hierarchical inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class. For example, cars and buses both are vehicle
+
+
+
+  class Vehicle {
+    Vehicle() {
+        System.out.println("This is a Vehicle");
+    }
+}
+
+class Car extends Vehicle {
+    Car() {
+        System.out.println("This Vehicle is Car");
+    }
+}
+
+class Bus extends Vehicle {
+    Bus() {
+        System.out.println("This Vehicle is Bus");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Car obj1 = new Car(); 
+        Bus obj2 = new Bus(); 
+    }
+}
+
+
+
+
+
+
+ class vehicle
+{
+    String company = "Toyota";
+
+    void start()
+    {
+        System.out.println("This Vehicle company is :"+company);
+    }
+}
+
+class Bike extends vehicle
+{
+    int wheels = 2;
+
+    void showBike()
+    {
+        System.out.println("This vehicle totally having :" +wheels +"wheels");
+    }
+
+}
+class Car extends vehicle{
+
+    String model = "INNOVA";
+
+    void showcar()
+    {
+        System.out.println("car model is :"+model);
+    }
+
+}
+public class main{
+    public static void main(String args[])
+    {
+
+        Car c = new Car();
+        System.out.println(c.company);
+        c.start();
+        c.showcar();
+
+        Bike b = new Bike();
+        b.start();
+        b.showBike();
+
+
+
+
+    }
+}
