@@ -124,3 +124,79 @@ o/p true
 | `split()`            | split into array      |
 | `indexOf()`          | find position         |
 | `isEmpty()`          | check empty string    |
+
+
+
+
+
+            class main
+{
+    public static void main(String args[])
+    {
+
+        //.append string using string builder
+        StringBuilder s = new StringBuilder("Divya");
+        s.append("Lakshmi");
+
+        System.out.println(s);
+
+        //reverse string
+        StringBuilder v = new StringBuilder("lakshmidivya");
+        v.reverse();
+
+        System.out.println(v);
+
+
+        //Insert character at pparticular postion
+        //syntac = string name.insert(position , the char to be eneter)
+
+        StringBuilder g = new StringBuilder("Sai Apa");
+        g.insert(5, "p");
+        System.out.println(g);
+
+        3. delete()
+            Remove characters.
+            sb.delete(1,3);
+        4.replace()
+            Replace part.
+            sb.replace(0,2,"K");
+
+        5.setCharAt()
+            Modify single character.
+            sb.setCharAt(0,'K');
+                Example
+                StringBuilder sb = new StringBuilder("Java");
+                    sb.setCharAt(0, 'K');
+                    System.out.println(sb);
+
+            6.convert string builder to string 
+
+            StringBuilder sb = new StringBuilder();
+
+sb.append("Hello");
+sb.append(" World");
+
+String result = sb.toString();
+
+
+    }
+}
+         
+
+
+        
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
