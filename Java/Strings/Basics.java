@@ -126,6 +126,7 @@ o/p true
 | `isEmpty()`          | check empty string    |
 
 
+            //////////////////String Builder/////////////////////
 
 
 
@@ -185,6 +186,129 @@ String result = sb.toString();
 
 
         
+
+        | Method               | Purpose                      |
+| -------------------- | ---------------------------- |
+| `length()`           | get total characters         |
+| `charAt(index)`      | access character             |
+| `toUpperCase()`      | convert to uppercase         |
+| `toLowerCase()`      | convert to lowercase         |
+| `trim()`             | remove outer spaces          |
+| `substring()`        | extract part of String       |
+| `contains()`         | check text exists            |
+| `equals()`           | compare content              |
+| `equalsIgnoreCase()` | compare ignoring case        |
+| `replace()`          | replace characters/text      |
+| `split()`            | split String into array      |
+| `indexOf()`          | find first occurrence        |
+| `lastIndexOf()`      | find last occurrence         |
+| `isEmpty()`          | check empty String           |
+| `concat()`           | join Strings                 |
+| `intern()`           | get pooled String            |
+| `toCharArray()`      | convert String to char array |
+
+            | Method        | Purpose                |
+| ------------- | ---------------------- |
+| `append()`    | join/add text          |
+| `reverse()`   | reverse String         |
+| `insert()`    | insert text            |
+| `delete()`    | remove characters      |
+| `replace()`   | replace part of text   |
+| `setCharAt()` | change character       |
+| `charAt()`    | access character       |
+| `capacity()`  | check current capacity |
+| `length()`    | check character count  |
+| `toString()`  | convert to String      |
+
+
+            | Concept       | Meaning                         |
+| ------------- | ------------------------------- |
+| String Pool   | reusable String storage         |
+| Immutable     | cannot change object            |
+| Mutable       | object can change               |
+| `==`          | compares references             |
+| `.equals()`   | compares content                |
+| Heap Memory   | stores objects                  |
+| StringBuilder | mutable text class              |
+| Regex         | pattern matching                |
+| Traversing    | accessing characters one by one |
+
+
+            | Task                | Method               |
+| ------------------- | -------------------- |
+| Reverse String      | `reverse()`          |
+| Count characters    | `length()`           |
+| Access character    | `charAt()`           |
+| Search word         | `contains()`         |
+| Find position       | `indexOf()`          |
+| Compare Strings     | `equals()`           |
+| Ignore case compare | `equalsIgnoreCase()` |
+| Split sentence      | `split()`            |
+| Remove spaces       | `trim()`             |
+| Replace text        | `replace()`          |
+| Build large String  | `append()`           |
+| Convert to array    | `toCharArray()`      |
+
+
+
+
+            //String buffer////////////////
+
+
+
+
+
+
+            class main
+{
+    public static void main(String args[])
+    {
+        //append method 
+        StringBuffer sb = new StringBuffer("Divya");
+        sb.append("Lakshmi");
+        System.out.println(sb);
+
+        //insert method
+
+        StringBuffer s = new StringBuffer("Cat");
+        s.insert(0,'R');
+        System.out.println(s);
+
+        //replace method
+
+        StringBuffer v = new StringBuffer("DIvya");
+        v.replace(0,1,"k");
+        System.out.println(v);
+
+
+        //delete characters
+
+        sb.delete(0,2);
+        System.out.println(sb);
+
+        //reverse word
+        StringBuffer y = new StringBuffer("I am going to win");
+        y.reverse();
+        System.out.println(y);
+
+        //setcharat at particular postion
+
+        StringBuffer p = new StringBuffer("Disicpline");
+        p.setCharAt(9,'o');
+        System.out.println(p);
+
+
+        //connvert strinbuffer to string
+            StringBuffer sb = new StringBuffer("Java");
+
+            String s = sb.toString();
+
+            System.out.println(s);
+
+
+            
+    }
+}
 
 
 
